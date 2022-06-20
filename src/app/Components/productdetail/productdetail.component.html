@@ -1,0 +1,28 @@
+<ion-card *ngIf="selectproduct">
+  <ion-card-header>
+    <ion-card-title>Détails:{{selectproduct.prodName}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+  Nom du produit: {{selectproduct.prodName}}
+  </ion-card-content>
+  <ion-card-content>
+  Code Cnk: {{selectproduct.cnk}}
+  </ion-card-content>
+  <ion-card-content>
+  Packaging: {{selectproduct.packaging}}
+  </ion-card-content>
+  <ion-card-content >
+  Dosage: {{selectproduct.strengths}}
+  </ion-card-content>
+  <ion-card-content *ngIf="selectproduct.man">
+  Fabricant: {{selectproduct.man.manName}}
+  </ion-card-content>
+  <ion-card-content *ngIf="selectproduct.sub">
+  Substance active: {{selectproduct.sub.subName}}
+  </ion-card-content>
+  <ion-card-content *ngIf="selectproduct.gal">
+  Forme galénique: {{selectproduct.gal.galName}}
+  </ion-card-content>
+  <ion-button expand="blok" (click)="annuler()" >Annuler</ion-button>
+  <ion-button expand="blok" (click)="addtoMP()" >Ajouter à ma pharmacie</ion-button>
+</ion-card>

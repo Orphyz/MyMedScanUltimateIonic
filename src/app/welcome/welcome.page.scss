@@ -1,0 +1,17 @@
+.content
+{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100%;
+  left:auto;
+  right: inherit;
+}
+
+ion-input{
+  border: 1px solid aliceblue !important;
+}
+
+ion-button{
+  width: 48%;
+}

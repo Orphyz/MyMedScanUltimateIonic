@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>tab4</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="createCPForm" (submit)="createCp()" novalidate>
+    <ion-item>
+      <ion-label position="stacked">Nom du produit</ion-label>
+      <ion-input formControlName="prodName" type="text" placeholder="Quel est le nom de votre produit?">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Packaging</ion-label>
+      <ion-input formControlName="packaging" type="number" placeholder="Combien d'unités y-a-t-il dans le conditionnement?">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Dosage</ion-label>
+      <ion-input formControlName="strengths" type="text" placeholder="Quel est le dosage unitaire?">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Lot</ion-label>
+      <ion-input formControlName="batch" type="text" placeholder="Quel est le numéro de lot du produit?">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date d'expiration</ion-label>
+      <ion-button id="open-modal">Séléctionez une date</ion-button>
+        <ion-modal trigger="open-modal">
+          <ng-template>
+            <ion-content>
+              <ion-datetime presentation="month-year" [max]="2050" formControlName="expDate" showDefaultButtons="true"></ion-datetime>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Numéro de série (SN)</ion-label>
+      <ion-input formControlName="serialN" type="text" placeholder="Quel est le numéro de série du produit?">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Code produit (PC)</ion-label>
+      <ion-input formControlName="pc" type="text" placeholder="Quel est code produit du produit?">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Indications</ion-label>
+      <ion-input formControlName="indications" type="text" placeholder="Quel sont les indications liées à l'usage du produit?">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Posologie</ion-label>
+      <ion-input formControlName="dosage" type="text" placeholder="Quel est la posologie liée àusage du produit?">
+      </ion-input>
+    </ion-item>
+    <ion-button expand="blok" type="submit">Enregistrer</ion-button>
+  </form>
+</ion-content>

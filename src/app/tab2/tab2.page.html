@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+    Répertoire
+    </ion-title>
+    <ion-input placeholder="Recherche par nom de produit" (ngModelChange)="searchByWord()" [(ngModel)]="searchWord"></ion-input>
+    <ion-input placeholder="Recherche par Cnk" (ngModelChange)="emptyCNK()" [(ngModel)]="searchCn"></ion-input>
+    <ion-button (click)="searchCnk()">Rechercher</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-list>
+    <ion-list-header>Produits</ion-list-header>
+    <ion-item *ngFor="let item of searchResult" (click)="openDetail(item.prodId)">
+      <p>{{item.prodName}} {{item.strengths}}</p>
+    </ion-item>
+  </ion-list>
+
+<ion-content class="footer">
+  <ion-button (click)="addProd()">Ajouter un produit personnalisé</ion-button>
+</ion-content>

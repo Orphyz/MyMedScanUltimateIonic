@@ -1,0 +1,49 @@
+<ion-card *ngIf="selectmp">
+  <ion-card-header>
+    <ion-card-title>Détails:{{selectmp.prod.prodName}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+  Nom du produit: {{selectmp.prod.prodName}}
+  </ion-card-content>
+  <ion-card-content *ngIf="selectmp.prod.sub">
+  Substance active: {{selectmp.prod.sub.sumName}}
+  </ion-card-content>
+  <ion-card-content *ngIf="selectmp.prod.strengths">
+  Dosage: {{selectmp.prod.strengths}}
+  </ion-card-content>
+  <ion-card-content *ngIf="selectmp.prod.gal">
+  Forme galénique: {{selectmp.prod.gal.galName}}
+  </ion-card-content>
+  <ion-card-content *ngIf="selectmp.prod.packaging">
+  Packaging: {{selectmp.prod.packaging}}
+  </ion-card-content>
+  <ion-card-content *ngIf="selectmp.prod.man">
+  Fabricant: {{selectmp.prod.man.manName}}
+  </ion-card-content>
+  <ion-card-content>
+  Batch: {{selectmp.batch}}
+  </ion-card-content>
+  <ion-card-content>
+  Date d'expiration: {{selectmp.expDate}}
+  </ion-card-content>
+  <ion-card-content>
+  Numéro de série: {{selectmp.serialN}}
+  </ion-card-content>
+  <ion-card-content>
+  Numéro de produit: {{selectmp.pc}}
+  </ion-card-content>
+  <ion-card-content *ngIf="selectmp.prod.cnk">
+  Code Cnk: {{selectmp.cnk}}
+  </ion-card-content>
+  <ion-card-content *ngIf="selectmp.prod.cnk">
+  Code Gtin: {{selectmp.prod.gtin}}
+  </ion-card-content>
+  <ion-card-content >
+  Indications: {{selectmp.indications}}
+  </ion-card-content>
+  <ion-card-content>
+  Posologie: {{selectmp.dosage}}
+  </ion-card-content>
+  <ion-button expand="blok" (click)="back()" >Revenir à MyPharmacy</ion-button>
+  <ion-button expand="blok" (click)="supprimer()" >Supprimer de MyPharmacy</ion-button>
+</ion-card>
